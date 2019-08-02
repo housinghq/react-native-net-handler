@@ -28,14 +28,14 @@ export default class Snackbar extends PureComponent {
                 actionHandler(status)
             } else {
                 actionHandler('Not Connected')
-                this.show()
+                this.timer = setTimeout(this.show, 1500)
             }
         }).catch((err) => {
             const { message } = err
             if (message === 'Not Connected') {
                 actionHandler(message)
             }
-            this.show()
+            this.timer = setTimeout(this.show, 1500)
         })
     }
     
@@ -54,7 +54,7 @@ export default class Snackbar extends PureComponent {
         const { type } =this.props
         this.dismiss()
         if (type === 'disconnected') {
-            this.timer = setTimeout(this.connectivityCheck, 1500)
+            this.connectivityCheck()
         }
     }
 

@@ -1,22 +1,24 @@
 
 package com.reactlibrary;
 
+import com.facebook.react.bridge.ReactApplicationContext;
+
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import static com.facebook.FacebookSdk.getApplicationContext;
-
 public class NetworkConnection {
     private static NetworkConnection netInfo = null;
+    private static ReactApplicationContext mcontext = null;
     private boolean isNetConnected;
 
-    private NetworkConnection() {
+    private NetworkConnection(ReactApplicationContext reactContext) {
+        mcontext = reactContext;
         isNetConnected = updateConnectionFlag();
     }
 
     public static boolean updateConnectionFlag() {
-        Context context = getApplicationContext();
+        Context context = mcontext.getApplicationContext();
         ConnectivityManager cm =
                 (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -25,9 +27,9 @@ public class NetworkConnection {
                 activeNetwork.isConnected());
     }
 
-    public static NetworkConnection getInstance() {
-        if (netInfo == null) {
-            netInfo = new NetworkConnection();
+    public static NetworkConnection getInstance(ReactApplicationContext... reactContext) {
+        if (netInfo == null && reactContext.length >= 1) {
+            netInfo = new NetworkConnection(reactContext[0]);
         }
         return netInfo;
     }

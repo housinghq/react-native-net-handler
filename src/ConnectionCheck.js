@@ -29,7 +29,6 @@ async function checkConnection(checkSlow = true) {
             }
         })
     } catch(err) {
-        console.log(err)
         return new Promise((resolve, reject) => reject(err))
     }
 }

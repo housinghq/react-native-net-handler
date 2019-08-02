@@ -11,5 +11,3 @@ module.exports = {
     Snackbar,
     checkConnection
 }
-
-export default getConnectionView

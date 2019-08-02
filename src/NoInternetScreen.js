@@ -7,6 +7,9 @@ const { NetInfoModule } = NativeModules
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#f8f8f8',
+        position: 'absolute',
+        top: 0,
+        zIndex: 100,
         height: '100%',
         width: '100%',
         alignItems: 'center'
@@ -18,6 +21,7 @@ const styles = StyleSheet.create({
     },
     noInternetText: {
         fontSize: 16,
+        color: 'black',
         textAlign: 'center',
         marginTop:33
     },
@@ -53,10 +57,10 @@ export default class NoInternetScreen extends PureComponent {
     onPress = () => {
         const { onTryAgain } = this.props
         NetInfoModule.isNetConnected()
-        .then((status) => onTryAgain(status))
+        .then((status) => onTryAgain((status ? 'Connected' : 'Not Connected')))
         .catch((err) => {
             console.log(err)
-            onTryAgain(false)
+            onTryAgain('Not Connected')
         })
     }
 

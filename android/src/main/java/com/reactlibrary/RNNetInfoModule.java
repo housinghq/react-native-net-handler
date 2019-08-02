@@ -19,7 +19,7 @@ public class RNNetInfoModule extends ReactContextBaseJavaModule implements Lifec
 
   public RNNetInfoModule(ReactApplicationContext reactContext) {
     super(reactContext);
-    netInfo = NetworkConnection.getInstance();
+    netInfo = NetworkConnection.getInstance(reactContext);
     mReceiver = new NetworkBroadcastReceiver(this.netInfo);
     getReactApplicationContext().addLifecycleEventListener(this);
     registerReceiverIfNecessary(mReceiver);
@@ -40,12 +40,6 @@ public class RNNetInfoModule extends ReactContextBaseJavaModule implements Lifec
           callback.reject(e);
           return false;
       }
-    }
-
-    @ReactMethod
-    public boolean tryAgain(Promise callback) {
-      NetworkConnection.updateConnectionFlag();
-      return isNetConnected(callback);
     }
 
     private void registerReceiverIfNecessary(BroadcastReceiver receiver) {
