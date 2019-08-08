@@ -44,17 +44,23 @@ extension ReachabilityObserverDelegate {
     }
     
     func getCurrentConnectionStatus() -> Bool {
-        let conn = reachability.connection;
-        if (conn == .none) {
-            return false
+        
+        if (reachability != nil) {
+            let conn = reachability.connection;
+            if (conn == .none) {
+                return false
+            }
+            return true
         }
-        return true
+        return false
     }
     
     /** Unsubscribe */
     func removeReachabilityObserver() {
-        reachability.stopNotifier()
-        NotificationCenter.default.removeObserver(self, name: Notification.Name.reachabilityChanged, object: reachability)
-        reachability = nil
+        if (reachability != nil) {
+            reachability.stopNotifier()
+            NotificationCenter.default.removeObserver(self, name: Notification.Name.reachabilityChanged, object: reachability)
+            reachability = nil
+        }
     }
 }

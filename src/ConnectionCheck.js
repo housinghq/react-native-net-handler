@@ -13,8 +13,8 @@ async function checkConnection(checkSlow = true) {
             if (status && checkSlow) {
                 const timeout = setTimeout(() => {
                     didTimeOut = true;
-                    reject(new Error('Connection Timed Out'));
-                }, FETCH_TIMEOUT);
+                    reject(new Error('Connection Timed Out'))
+                }, FETCH_TIMEOUT)
                 fetch('http://www.google.com')
                 .then((response) => {
                     clearTimeout(timeout)
