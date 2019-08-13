@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react'
 import { View, Text, Image, TouchableOpacity, StyleSheet, NativeModules } from 'react-native'
 import PropTypes from 'prop-types'
-
-const { NetInfoModule } = NativeModules
+import checkConnectionStatus from './ConnectionCheck'
 
 const styles = StyleSheet.create({
     container: {
@@ -56,7 +55,7 @@ export default class NoInternetScreen extends PureComponent {
 
     onPress = () => {
         const { onTryAgain } = this.props
-        NetInfoModule.isNetConnected()
+        checkConnectionStatus(false)
         .then((info) => onTryAgain(info))
         .catch((err) => {
             console.log(err)

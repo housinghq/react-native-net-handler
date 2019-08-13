@@ -29,7 +29,7 @@ export default class Snackbar extends PureComponent {
                 this.timer = setTimeout(this.show, 1500)
             }
         }).catch((err) => {
-            const { stausCode } = err
+            const { statusCode } = err
             if (statusCode === 401) {
                 actionHandler(err)
             }

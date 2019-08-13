@@ -11,12 +11,14 @@ const getInfo = (status = false, isTimedOut = false) => {
         statusCode: 401,
         message: 'Not Connected'
     }
-    if (status) {
+    if (isTimedOut) {
         info.isConnected = true
-        info.statusCode = 200
-    } else if (isTimedOut) {
         info.statusCode = 402
         info.message = 'Connection Timed Out'
+    } else if (status) {
+        info.isConnected = true
+        info.statusCode = 200
+        info.message = 'Connected'
     }
     return info
 }

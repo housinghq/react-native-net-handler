@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0FDF6E23033F4F007FAFD5 /* ReachabilityObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0FDF6D23033F4F007FAFD5 /* ReachabilityObserver.swift */; };
 		0DA282E422E589C800A592AB /* ReachabilityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA282E322E589C800A592AB /* ReachabilityHandler.swift */; };
 		0DA282E722E58AE700A592AB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA282E522E58AE700A592AB /* Reachability.swift */; };
-		0DA282E822E58AE700A592AB /* ReachabilityObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA282E622E58AE700A592AB /* ReachabilityObserverDelegate.swift */; };
 		B3E7B58A1CC2AC0600A0062D /* RNNetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNNetInfo.m */; };
 /* End PBXBuildFile section */
 
@@ -26,10 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D0FDF6D23033F4F007FAFD5 /* ReachabilityObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityObserver.swift; sourceTree = "<group>"; };
 		0DA282E222E589C700A592AB /* RNNetInfo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNNetInfo-Bridging-Header.h"; sourceTree = "<group>"; };
 		0DA282E322E589C800A592AB /* ReachabilityHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityHandler.swift; sourceTree = "<group>"; };
 		0DA282E522E58AE700A592AB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		0DA282E622E58AE700A592AB /* ReachabilityObserverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityObserverDelegate.swift; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNNetInfo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNNetInfo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNNetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNetInfo.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNNetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNetInfo.m; sourceTree = "<group>"; };
@@ -64,8 +64,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				0D0FDF6D23033F4F007FAFD5 /* ReachabilityObserver.swift */,
 				0DA282E522E58AE700A592AB /* Reachability.swift */,
-				0DA282E622E58AE700A592AB /* ReachabilityObserverDelegate.swift */,
 				0DA282E322E589C800A592AB /* ReachabilityHandler.swift */,
 				B3E7B5881CC2AC0600A0062D /* RNNetInfo.h */,
 				B3E7B5891CC2AC0600A0062D /* RNNetInfo.m */,
@@ -133,8 +133,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0FDF6E23033F4F007FAFD5 /* ReachabilityObserver.swift in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNNetInfo.m in Sources */,
-				0DA282E822E58AE700A592AB /* ReachabilityObserverDelegate.swift in Sources */,
 				0DA282E422E589C800A592AB /* ReachabilityHandler.swift in Sources */,
 				0DA282E722E58AE700A592AB /* Reachability.swift in Sources */,
 			);
