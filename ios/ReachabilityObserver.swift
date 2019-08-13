@@ -8,32 +8,25 @@
 
 import Foundation
 
-//Reachability
-//declare this property where it won't go out of scope relative to your listener
-fileprivate var reachability: Reachability!
-
-protocol ReachabilityActionDelegate {
+protocol ReachabilityActionDelegate: class {
     func reachabilityChanged(_ isReachable: Bool)
 }
 
-protocol ReachabilityObserverDelegate: class, ReachabilityActionDelegate {
-    func addReachabilityObserver()
-    func removeReachabilityObserver()
-}
-
-// Declaring default implementation of adding/removing observer
-extension ReachabilityObserverDelegate {
+class ReachabilityObserver {
     
+    weak var delegate: ReachabilityActionDelegate?
+    fileprivate var reachability: Reachability!
+   
     /** Subscribe on reachability changing */
     func addReachabilityObserver() {
         reachability = Reachability()
         
         reachability.whenReachable = { [weak self] reachability in
-            self?.reachabilityChanged(true)
+            self?.delegate?.reachabilityChanged(true)
         }
         
         reachability.whenUnreachable = { [weak self] reachability in
-            self?.reachabilityChanged(false)
+            self?.delegate?.reachabilityChanged(false)
         }
         
         do {
@@ -63,4 +56,5 @@ extension ReachabilityObserverDelegate {
             reachability = nil
         }
     }
+
 }

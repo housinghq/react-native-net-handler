@@ -5,6 +5,22 @@ const { NetInfoModule } = NativeModules
 
 const FETCH_TIMEOUT = 750
 
+const getInfo = (status = false, isTimedOut = false) => {
+    let info = {
+        isConnected: false,
+        statusCode: 401,
+        message: 'Not Connected'
+    }
+    if (status) {
+        info.isConnected = true
+        info.statusCode = 200
+    } else if (isTimedOut) {
+        info.statusCode = 402
+        info.message = 'Connection Timed Out'
+    }
+    return info
+}
+
 async function checkConnection(checkSlow = true) {
     try {
         let didTimeOut = false;
@@ -13,19 +29,21 @@ async function checkConnection(checkSlow = true) {
             if (status && checkSlow) {
                 const timeout = setTimeout(() => {
                     didTimeOut = true;
-                    reject(new Error('Connection Timed Out'))
+                    reject(getInfo(false,true))
                 }, FETCH_TIMEOUT)
                 fetch('http://www.google.com')
                 .then((response) => {
                     clearTimeout(timeout)
-                    if (!didTimeOut) { resolve('Connected') }
+                    if (!didTimeOut) {
+                        resolve(getInfo(true))
+                    }
                 })
                 .catch((error) => { reject(error) })
             } else if (status) {
-                resolve('Connected')
+                resolve(getInfo(true))
             }
             else {
-                reject(new Error('Not Connected'))
+                reject(getInfo())
             }
         })
     } catch(err) {

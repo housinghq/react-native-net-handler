@@ -9,20 +9,23 @@
 import Foundation
 
 @objc(ReachabilityHandler)
-open class ReachabilityHandler: NSObject, ReachabilityObserverDelegate {
+class ReachabilityHandler: NSObject, ReachabilityActionDelegate {
     
     fileprivate var isConnected: Bool
+    fileprivate var observer: ReachabilityObserver
     //MARK: Lifecycle
     
-    required override public init() {
+    override init() {
         isConnected = false
+        observer = ReachabilityObserver()
         super.init()
-        addReachabilityObserver()
-        isConnected = getCurrentConnectionStatus()
+        observer.delegate = self
+        observer.addReachabilityObserver()
+        isConnected = observer.getCurrentConnectionStatus()
     }
     
     deinit {
-        removeReachabilityObserver()
+        observer.removeReachabilityObserver()
     }
     
     //MARK: Reachability

@@ -23,17 +23,15 @@ export default class Snackbar extends PureComponent {
 
     connectivityCheck = () => {
         const { actionHandler } = this.props
-        checkConnectionStatus(false).then((status) => {
-            if (status === 'Connected') {
-                actionHandler(status)
-            } else {
-                actionHandler('Not Connected')
+        checkConnectionStatus(false).then((info) => {
+            actionHandler(info)
+            if (!info.isConnected) {
                 this.timer = setTimeout(this.show, 1500)
             }
         }).catch((err) => {
-            const { message } = err
-            if (message === 'Not Connected') {
-                actionHandler(message)
+            const { stausCode } = err
+            if (statusCode === 401) {
+                actionHandler(err)
             }
             this.timer = setTimeout(this.show, 1500)
         })
@@ -50,7 +48,7 @@ export default class Snackbar extends PureComponent {
         return message
     }
 
-    actionHandler = () => {
+    onActionButtonPress = () => {
         const { type } =this.props
         this.dismiss()
         if (type === 'disconnected') {
@@ -68,7 +66,7 @@ export default class Snackbar extends PureComponent {
                 textMessage={textMessage}
                 actionText={(type === 'disconnected' ? 'retry' : null)}
                 accentColor={'green'}
-                actionHandler={this.actionHandler}
+                actionHandler={this.onActionButtonPress}
             />
         )
     }

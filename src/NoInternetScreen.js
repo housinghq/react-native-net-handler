@@ -57,10 +57,15 @@ export default class NoInternetScreen extends PureComponent {
     onPress = () => {
         const { onTryAgain } = this.props
         NetInfoModule.isNetConnected()
-        .then((status) => onTryAgain((status ? 'Connected' : 'Not Connected')))
+        .then((info) => onTryAgain(info))
         .catch((err) => {
             console.log(err)
-            onTryAgain('Not Connected')
+            const info = {
+                isConnected: false,
+                statusCode: 401,
+                message: 'Not Connected'
+            }
+            onTryAgain(info)
         })
     }
 
