@@ -1,7 +1,7 @@
 {
-  "name": "react-native-net-info",
+  "name": "react-native-net-handler",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Getting started",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,13 +10,20 @@
     "react-native"
   ],
   "author": "Manthan Patel",
-  "license": "",
+  "license": "ISC",
   "peerDependencies": {
-    "react-native": "^0.41.2",
+    "react-native": "0.59.2",
     "react-native-snackbar-component": "1.1.0"
   },
   "dependencies": {
-    "react-native": "^0.59.2",
     "react-native-snackbar-component": "1.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/housinghq/react-native-net-handler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/housinghq/react-native-net-handler/issues"
+  },
+  "homepage": "https://github.com/housinghq/react-native-net-handler#readme"
 }
