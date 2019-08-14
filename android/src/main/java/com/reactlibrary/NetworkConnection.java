@@ -12,6 +12,8 @@ public class NetworkConnection {
     private static ReactApplicationContext mcontext = null;
     private boolean isNetConnected;
 
+    private NetworkConnection() {}
+
     private NetworkConnection(ReactApplicationContext reactContext) {
         mcontext = reactContext;
         isNetConnected = updateConnectionFlag();
