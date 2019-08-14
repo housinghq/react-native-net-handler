@@ -29,7 +29,7 @@ public class NetworkConnection {
                 activeNetwork.isConnected());
     }
 
-    public static NetworkConnection getInstance(ReactApplicationContext reactContext) {
+    public static synchronized NetworkConnection getInstance(ReactApplicationContext reactContext) {
         if (netInfo == null) {
             netInfo = new NetworkConnection(reactContext);
         }
