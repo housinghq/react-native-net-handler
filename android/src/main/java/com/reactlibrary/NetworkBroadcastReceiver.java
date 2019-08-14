@@ -11,8 +11,8 @@ import android.net.NetworkInfo;
 public class NetworkBroadcastReceiver extends BroadcastReceiver {
     private NetworkConnection netInfo = null;
 
-    public NetworkBroadcastReceiver(NetworkConnection netInfo) {
-        this.netInfo = netInfo;
+    public NetworkBroadcastReceiver() {
+        this.netInfo = NetworkConnection.getInstance();
     }
 
     private void setConnectionStatus(boolean status) {
