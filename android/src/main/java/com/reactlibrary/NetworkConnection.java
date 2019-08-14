@@ -29,9 +29,9 @@ public class NetworkConnection {
                 activeNetwork.isConnected());
     }
 
-    public static NetworkConnection getInstance(ReactApplicationContext... reactContext) {
-        if (netInfo == null && reactContext.length >= 1) {
-            netInfo = new NetworkConnection(reactContext[0]);
+    public static NetworkConnection getInstance(ReactApplicationContext reactContext) {
+        if (netInfo == null) {
+            netInfo = new NetworkConnection(reactContext);
         }
         return netInfo;
     }

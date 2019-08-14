@@ -11,16 +11,9 @@ import android.net.NetworkInfo;
 public class NetworkBroadcastReceiver extends BroadcastReceiver {
     private NetworkConnection netInfo = null;
 
-    public NetworkBroadcastReceiver() {
-        this.netInfo = NetworkConnection.getInstance();
+    public NetworkBroadcastReceiver(NetworkConnection netInfo) {
+        this.netInfo = netInfo;
     }
-
-    private void setConnectionStatus(boolean status) {
-        if (netInfo != null) {
-            netInfo.setNetConnected(status);
-        }
-    }
-
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -29,5 +22,11 @@ public class NetworkBroadcastReceiver extends BroadcastReceiver {
         NetworkInfo receivedInfo = conn.getActiveNetworkInfo();
         boolean connStatus = (receivedInfo != null && receivedInfo.isConnected());
         this.setConnectionStatus(connStatus);
+    }
+
+    private void setConnectionStatus(boolean status) {
+        if (netInfo != null) {
+            netInfo.setNetConnected(status);
+        }
     }
 }

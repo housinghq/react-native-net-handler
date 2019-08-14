@@ -20,9 +20,11 @@ public class RNNetInfoModule extends ReactContextBaseJavaModule implements Lifec
   public RNNetInfoModule(ReactApplicationContext reactContext) {
     super(reactContext);
     netInfo = NetworkConnection.getInstance(reactContext);
-    mReceiver = new NetworkBroadcastReceiver();
-    getReactApplicationContext().addLifecycleEventListener(this);
+    mReceiver = new NetworkBroadcastReceiver(netInfo);
     registerReceiverIfNecessary(mReceiver);
+    if (isReceiverRegistered) {
+        getReactApplicationContext().addLifecycleEventListener(this);
+    }
   }
 
     @Override
@@ -42,8 +44,23 @@ public class RNNetInfoModule extends ReactContextBaseJavaModule implements Lifec
       }
     }
 
+    @Override
+    public void onHostResume() {
+        registerReceiverIfNecessary(mReceiver);
+    }
+
+    @Override
+    public void onHostPause() {
+        unregisterReceiver(mReceiver);
+    }
+
+    @Override
+    public void onHostDestroy() {
+        unregisterReceiver(mReceiver);
+    }
+
     private void registerReceiverIfNecessary(BroadcastReceiver receiver) {
-        if (getCurrentActivity() == null) return;
+        if (getCurrentActivity() == null && !isReceiverRegistered) return;
         try {
             getCurrentActivity().registerReceiver(
                     receiver,
@@ -64,19 +81,5 @@ public class RNNetInfoModule extends ReactContextBaseJavaModule implements Lifec
                 e.printStackTrace();
             }
         }
-    }
-    @Override
-    public void onHostResume() {
-        registerReceiverIfNecessary(mReceiver);
-    }
-
-    @Override
-    public void onHostPause() {
-        unregisterReceiver(mReceiver);
-    }
-
-    @Override
-    public void onHostDestroy() {
-        unregisterReceiver(mReceiver);
     }
 }
