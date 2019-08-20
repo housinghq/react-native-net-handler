@@ -3,16 +3,17 @@
 
 ## Getting started
 
-`$ npm install react-native-net-info --save`
+`$ npm install @housing/react-native-net-handler --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-net-info`
+`$ react-native link @housing/react-native-net-handler`
 
 ### Manual installation
 
 
 #### iOS
+[Reachability Source:](https://github.com/ashleymills/Reachability.swift/tree/master/Sources)
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `react-native-net-info` and add `RNNetInfo.xcodeproj`
@@ -26,18 +27,18 @@
   - Add `new RNNetInfoPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-net-info'
-  	project(':react-native-net-info').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-net-info/android')
+  	include ':@housing_react-native-net-handler'
+  	project(':@housing_react-native-net-handler').projectDir = new File(rootProject.projectDir, 	'../node_modules/@housing/react-native-net-handler/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-net-info')
+      compile project(':@housing_react-native-net-handler')
   	```
 
 
 ## Usage
 ```javascript
-import RNNetInfo from 'react-native-net-info';
+import RNNetInfo from '@housing/react-native-net-handler';
 
 // TODO: What to do with the module?
 RNNetInfo;
