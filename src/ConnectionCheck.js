@@ -33,7 +33,7 @@ async function checkConnection(checkSlow = true) {
                     didTimeOut = true;
                     reject(getInfo(false,true))
                 }, FETCH_TIMEOUT)
-                fetch('http://www.google.com')
+                fetch('https://www.google.com')
                 .then((response) => {
                     clearTimeout(timeout)
                     if (!didTimeOut) {
