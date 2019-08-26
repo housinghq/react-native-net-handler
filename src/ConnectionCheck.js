@@ -3,7 +3,7 @@ import { NativeModules } from 'react-native'
 
 const { NetInfoModule } = NativeModules
 
-const FETCH_TIMEOUT = 750
+const FETCH_TIMEOUT = 1000
 
 const getInfo = (status = false, isTimedOut = false) => {
     let info = {
