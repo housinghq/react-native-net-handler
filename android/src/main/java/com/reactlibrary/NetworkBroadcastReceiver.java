@@ -17,7 +17,6 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 public class NetworkBroadcastReceiver extends BroadcastReceiver {
     private NetworkConnection netInfo = null;
     private static final String EVENT_CHANGE = "net-handler:Status Change";
-    private static final String EVENT = "net-handler: Status";
     private ReactApplicationContext mContext = null;
 
     public NetworkBroadcastReceiver(NetworkConnection netInfo, ReactApplicationContext context) {
