@@ -4,10 +4,8 @@ Object.defineProperty(exports, "__esModule", {
 
 import NoInternetScreen from './src/NoInternetScreen'
 import checkConnection from './src/ConnectionCheck'
-import { NativeModule } from 'react-native'
 
 module.exports = {
     NoInternetScreen,
-    checkConnection,
-    NetInfoModule : NativeModule.NetInfoModule
+    checkConnection
 }
