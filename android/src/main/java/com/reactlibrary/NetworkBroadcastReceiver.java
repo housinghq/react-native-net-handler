@@ -31,13 +31,6 @@ public class NetworkBroadcastReceiver extends BroadcastReceiver {
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo receivedInfo = conn.getActiveNetworkInfo();
         boolean connStatus = (receivedInfo != null && receivedInfo.isConnected());
-        WritableMap status = Arguments.createMap();
-        status.putBoolean("status", connStatus);
-        if (mContext!=null){
-            mContext
-                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                    .emit(EVENT, status);
-        }
         this.setConnectionStatus(connStatus);
     }
 
