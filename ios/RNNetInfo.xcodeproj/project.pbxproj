@@ -97,35 +97,35 @@
 		};
 /* End PBXNativeTarget section */
 
-/* Begin PBXProject section */	
-		58B511D31A9E6C8500147676 /* Project object */ = {	
-			isa = PBXProject;	
-			attributes = {	
-				LastUpgradeCheck = 1010;	
-				ORGANIZATIONNAME = Facebook;	
-				TargetAttributes = {	
-					58B511DA1A9E6C8500147676 = {	
-						CreatedOnToolsVersion = 6.1.1;	
-						DevelopmentTeam = J9HRA4G7LQ;	
-						LastSwiftMigration = 1010;	
-					};	
-				};	
-			};	
-			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNNetInfo" */;	
-			compatibilityVersion = "Xcode 3.2";	
-			developmentRegion = English;	
-			hasScannedForEncodings = 0;	
-			knownRegions = (	
-				en,	
-			);	
-			mainGroup = 58B511D21A9E6C8500147676;	
-			productRefGroup = 58B511D21A9E6C8500147676;	
-			projectDirPath = "";	
-			projectRoot = "";	
-			targets = (	
-				58B511DA1A9E6C8500147676 /* RNNetInfo */,	
-			);	
-		};	
+/* Begin PBXProject section */
+		58B511D31A9E6C8500147676 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Facebook;
+				TargetAttributes = {
+					58B511DA1A9E6C8500147676 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = J9HRA4G7LQ;
+						LastSwiftMigration = 1010;
+					};
+				};
+			};
+			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNNetInfo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 58B511D21A9E6C8500147676;
+			productRefGroup = 58B511D21A9E6C8500147676;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58B511DA1A9E6C8500147676 /* RNNetInfo */,
+			);
+		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
