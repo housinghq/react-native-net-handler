@@ -18,7 +18,7 @@ public class NetworkBroadcastReceiver extends BroadcastReceiver {
     private NetworkConnection netInfo = null;
     private static final String EVENT_CHANGE = "connectionChange";
     private DeviceEventManagerModule.RCTDeviceEventEmitter jsModuleEventEmitter = null;
-    private mContext = null;
+    private ReactApplicationContext mContext = null;
 
     public NetworkBroadcastReceiver(NetworkConnection netInfo,
                                     DeviceEventManagerModule.RCTDeviceEventEmitter jsModuleEventEmitter,
