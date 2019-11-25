@@ -18,11 +18,14 @@ public class NetworkBroadcastReceiver extends BroadcastReceiver {
     private NetworkConnection netInfo = null;
     private static final String EVENT_CHANGE = "connectionChange";
     private DeviceEventManagerModule.RCTDeviceEventEmitter jsModuleEventEmitter = null;
+    private mContext = null;
 
     public NetworkBroadcastReceiver(NetworkConnection netInfo,
-                                    DeviceEventManagerModule.RCTDeviceEventEmitter jsModuleEventEmitter) {
+                                    DeviceEventManagerModule.RCTDeviceEventEmitter jsModuleEventEmitter,
+                                    ReactApplicationContext context) {
         this.netInfo = netInfo;
         this.jsModuleEventEmitter = jsModuleEventEmitter;
+        mContext = context;
     }
 
     @Override
@@ -35,7 +38,7 @@ public class NetworkBroadcastReceiver extends BroadcastReceiver {
     }
 
     private void setConnectionStatus(boolean status) {
-        NetworkConnection network = NetworkConnection.getInstance();
+        NetworkConnection network = NetworkConnection.getInstance(mContext);
         boolean currentStatus = network.getConnectionStatus();
         WritableMap receivedMessage = Arguments.createMap();
         receivedMessage.putBoolean("status", status);
