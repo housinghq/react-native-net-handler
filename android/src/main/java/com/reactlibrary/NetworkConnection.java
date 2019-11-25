@@ -12,7 +12,7 @@ public class NetworkConnection {
     private static ReactApplicationContext mcontext = null;
     private boolean isNetConnected;
 
-    public NetworkConnection() {}
+    private NetworkConnection() {}
 
     private NetworkConnection(ReactApplicationContext reactContext) {
         mcontext = reactContext;

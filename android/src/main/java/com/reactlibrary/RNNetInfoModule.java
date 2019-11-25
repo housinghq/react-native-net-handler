@@ -20,7 +20,9 @@ public class RNNetInfoModule extends ReactContextBaseJavaModule implements Lifec
   public RNNetInfoModule(ReactApplicationContext reactContext) {
     super(reactContext);
     netInfo = NetworkConnection.getInstance(reactContext);
-    mReceiver = new NetworkBroadcastReceiver(netInfo, reactContext);
+    DeviceEventManagerModule.RCTDeviceEventEmitter jsModuleEventEmitter =
+            reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class);
+    mReceiver = new NetworkBroadcastReceiver(netInfo, jsModuleEventEmitter);
     getReactApplicationContext().addLifecycleEventListener(this);
     registerReceiverIfNecessary(mReceiver);
   }
