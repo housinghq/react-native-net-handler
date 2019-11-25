@@ -7,14 +7,12 @@
 //
 
 import Foundation
-import UIKit
 
 @objc(ReachabilityHandler)
 class ReachabilityHandler: NSObject, ReachabilityActionDelegate {
     
     fileprivate var isConnected: Bool
     fileprivate var observer: ReachabilityObserver
-    var bridge: RCTBridge!
     //MARK: Lifecycle
     
     override init() {
@@ -32,9 +30,8 @@ class ReachabilityHandler: NSObject, ReachabilityActionDelegate {
     
     //MARK: Reachability
     
-    @objc func reachabilityChanged(_ isReachable: Bool) {
+    func reachabilityChanged(_ isReachable: Bool) {
         isConnected = isReachable
-        self.bridge.eventDispatcher.sendAppEventWithName( "statusChange", body: isConnected )
     }
     
     @objc

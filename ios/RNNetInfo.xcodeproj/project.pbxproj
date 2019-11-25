@@ -10,7 +10,6 @@
 		0D0FDF6E23033F4F007FAFD5 /* ReachabilityObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0FDF6D23033F4F007FAFD5 /* ReachabilityObserver.swift */; };
 		0DA282E422E589C800A592AB /* ReachabilityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA282E322E589C800A592AB /* ReachabilityHandler.swift */; };
 		0DA282E722E58AE700A592AB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA282E522E58AE700A592AB /* Reachability.swift */; };
-		63E1BA8569525A4D4122269D /* Pods_RNNetInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6A14CBBA2A152AA6EE94D3 /* Pods_RNNetInfo.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNNetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNNetInfo.m */; };
 /* End PBXBuildFile section */
 
@@ -32,9 +31,6 @@
 		0DA282E322E589C800A592AB /* ReachabilityHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityHandler.swift; sourceTree = "<group>"; };
 		0DA282E522E58AE700A592AB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNNetInfo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNNetInfo.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CBD273F74004F1CF60DE3F8 /* Pods-RNNetInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNNetInfo.debug.xcconfig"; path = "Target Support Files/Pods-RNNetInfo/Pods-RNNetInfo.debug.xcconfig"; sourceTree = "<group>"; };
-		4E6A14CBBA2A152AA6EE94D3 /* Pods_RNNetInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNNetInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3C94F0CFE7931F8FA4AAC94 /* Pods-RNNetInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNNetInfo.release.xcconfig"; path = "Target Support Files/Pods-RNNetInfo/Pods-RNNetInfo.release.xcconfig"; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNNetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNetInfo.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNNetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNetInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,7 +40,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63E1BA8569525A4D4122269D /* Pods_RNNetInfo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,7 +49,6 @@
 		0D937E0E22E1C96600F3748B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4E6A14CBBA2A152AA6EE94D3 /* Pods_RNNetInfo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,18 +72,7 @@
 				134814211AA4EA7D00B7C361 /* Products */,
 				0D937E0E22E1C96600F3748B /* Frameworks */,
 				0DA282E222E589C700A592AB /* RNNetInfo-Bridging-Header.h */,
-				5BA39480F4333AE372DC8813 /* Pods */,
 			);
-			sourceTree = "<group>";
-		};
-		5BA39480F4333AE372DC8813 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4CBD273F74004F1CF60DE3F8 /* Pods-RNNetInfo.debug.xcconfig */,
-				A3C94F0CFE7931F8FA4AAC94 /* Pods-RNNetInfo.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,7 +82,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNNetInfo" */;
 			buildPhases = (
-				A54FEB198541B45310F46F5C /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -114,62 +96,6 @@
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		58B511D31A9E6C8500147676 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = Facebook;
-				TargetAttributes = {
-					58B511DA1A9E6C8500147676 = {
-						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = J9HRA4G7LQ;
-						LastSwiftMigration = 1010;
-					};
-				};
-			};
-			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNNetInfo" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 58B511D21A9E6C8500147676;
-			productRefGroup = 58B511D21A9E6C8500147676;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				58B511DA1A9E6C8500147676 /* RNNetInfo */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A54FEB198541B45310F46F5C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNNetInfo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -272,7 +198,6 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CBD273F74004F1CF60DE3F8 /* Pods-RNNetInfo.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -301,7 +226,6 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3C94F0CFE7931F8FA4AAC94 /* Pods-RNNetInfo.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
