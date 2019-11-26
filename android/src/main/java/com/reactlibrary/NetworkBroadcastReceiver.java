@@ -15,14 +15,11 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 
 public class NetworkBroadcastReceiver extends BroadcastReceiver {
-    private NetworkConnection netInfo = null;
     private static final String EVENT_CHANGE = "connectionChange";
     private ReactApplicationContext mContext = null;
     DeviceEventManagerModule.RCTDeviceEventEmitter jsModuleEventEmitter = null;
 
-    public NetworkBroadcastReceiver(NetworkConnection netInfo, 
-                                    ReactApplicationContext context) {
-        this.netInfo = netInfo;
+    public NetworkBroadcastReceiver(ReactApplicationContext context) {
         mContext = context;
     }
 
@@ -36,6 +33,7 @@ public class NetworkBroadcastReceiver extends BroadcastReceiver {
     }
 
     private void setConnectionStatus(boolean status) {
+        NetworkConnection netInfo = NetworkConnection.getInstance(mContext);
         boolean currentStatus = netInfo.getConnectionStatus();
         WritableMap receivedMessage = Arguments.createMap();
         receivedMessage.putBoolean("status", status);
